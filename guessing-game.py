@@ -18,11 +18,15 @@ while guess.lower() != secret_word and not (out_of_guesses):
         guess = input("Enter a guess: ")
         guess_count += 1
 
+        # prints the guess count whenever they guess, and as long as the word isnt guessed
+        if guess_count + 1 and guess.lower() != secret_word:
+            print("You have guessed " + str(guess_count) + " times!")
+
         # provides a hint if guess_count reaches 3
-        if guess_count == 3:
+        if guess_count == 3 and guess.lower() != secret_word:
             print("Hint: It's a big animal!")
 
-        if guess_count == 6:
+        if guess_count == 6 and guess.lower() != secret_word:
             print("Last Hint: This animal is black and white and very clumsy!")
 
     # if guess_count reaches limit, out_of_guesses changes to true
